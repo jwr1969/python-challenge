@@ -1,3 +1,6 @@
-Financial Analysis
-Item,Value
-Total months: ,86
+"Financial Analysis"
+----------------------------
+"Total months: 86"
+"Total net profit: $38382578"
+"Greatest monthly profit: Feb-2012 ($1926159)"
+"Greatest monthly loss: Sep-2013 ($-2196167)"

@@ -54,25 +54,25 @@ with open(csvpath) as csvfile:
     print("Financial Analysis")
     print("----------------------------")
     print("Total months: " + str(total_months))
-    print("Total net profit: " + str(net_PandL))
-    print("Average profit change: " + str(sum_change/(total_months - 1)))
-    print("Greatest monthly profit: " + str(greatest_increase_month) + "(" + str(greatest_increase) + ")")
-    print("Greatest monthly loss: " + str(greatest_decrease_month) + "(" + str(greatest_decrease) + ")")
+    print("Total net profit: " + "$"+ str(net_PandL))
+    print("Average profit change: " + "$" + str(round(sum_change/(total_months - 1), 2)))
+    print("Greatest monthly profit: " + str(greatest_increase_month) + " ($" + str(greatest_increase) + ")")
+    print("Greatest monthly loss: " + str(greatest_decrease_month) + " ($" + str(greatest_decrease) + ")")
 
 # Export results to .txt file
 
 output_path = os.path.join("analysis", "output.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
-with open(output_path, 'w') as csvfile:
+with open(output_path, 'w', newline="\n") as csvfile:
 
     # Initialize csv.writer
-    csvwriter = csv.writer(csvfile, delimiter=' ')
+    csvwriter = csv.writer(csvfile, delimiter=" ")
 
     # Write the first row (column headers)
-    csvwriter.writerow(['Financial Analysis'])
-    csvwriter.writerow(['Item', 'Value'])
-
-    # Write the second row
-    csvwriter.writerow(['Total months: ', str(total_months)])
-
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(["----------------------------"])
+    csvwriter.writerow(["Total months: " + str(total_months)])
+    csvwriter.writerow(["Total net profit: " + "$"+ str(net_PandL)])
+    csvwriter.writerow(["Greatest monthly profit: " + str(greatest_increase_month) + " ($" + str(greatest_increase) + ")"])
+    csvwriter.writerow(["Greatest monthly loss: " + str(greatest_decrease_month) + " ($" + str(greatest_decrease) + ")"])
